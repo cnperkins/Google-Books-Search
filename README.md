@@ -1,7 +1,7 @@
 # Google-Books-Search
 
 ## Introduction
-This is a React application. From the Search page Users can search for any book, save it or Users can go view more about the book when they click on "view". From the Saved page users can view all their saved books and delete them if they want. I was having issues getting the api to work on heroku, the page would come up but I couldn't search for a book. So a scrapepd a lot of things and created a new heroku page and deployed to that one. Something is wrong with the api for the saved books section and also the heroku site is not working for me anymore. I worked with a lot of support people on ask bsc. I exhausted myself on this. I will have to step away and come back with a fresh mind.
+This is a React application. From the Search page Users can search for any book, save it or Users can go view more about the book when they click on "view". From the Saved page users can view all their saved books and delete them if they want. I was having issues getting the api to work on heroku, the page would come up but I couldn't search for a book. So a scrapped a lot of things and created a new heroku page and deployed to that one. Something is wrong with the api for the saved books section and also the heroku site is not working for me anymore. I worked with a lot of support people on ask bcs. I exhausted myself on this. I will have to step away and come back with a fresh mind. The app does pull up in local host and you can search for a book and save it, However it does not appear when you bring up the saved page.
 
 App built with React, Node, Express and MongoDB
 
