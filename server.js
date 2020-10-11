@@ -2,7 +2,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const apiRoutes = require("./routes/index");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,7 +13,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use(routes);
+app.use('/api', apiRoutes);
+
 
 const MONGODB_URI = process.env.MONGOATLAS_URI
 || 'mongodb://localhost/google-books';

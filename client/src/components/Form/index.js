@@ -1,32 +1,18 @@
 import React from "react";
+import "./style.css"
 
-function Form({ q, handleInputChange, handleFormSubmit }) {
+export function Form(props) {
     return (
-        <form>
-            <div className="form-group">
-                <label htmlFor="Query">
-                    <strong>Book</strong>
-                </label>
-                <input
-                    className="form-control"
-                    id="Title"
-                    type="text"
-                    value={q}
-                    placeholder="Book Title"
-                    name="q"
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
-            <div className="pull-right">
-                <button
-                    onClick={handleFormSubmit}
-                    type="submit"
-                    className="btn btn-lg btn-danger float-right">Search
-                </button>
-            </div>
-        </form>
+        <div className="Form-group Form-group-lg">
+            <input className="form-control" type="text" {...props} />
+        </div>
     );
 }
 
-export default Form;
+export function SearchButton({ type = "default", className, children, onClick }) {
+    return (
+        <button onClick={onClick} className={["search btn btn-lg", `btn-${type}`, className].join(" ")}>
+            {children}
+        </button>
+    );
+}
