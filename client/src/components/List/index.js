@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "../Grid";
 import Save from "../Save";
 import API from "../../utils/API";
-import Delete from "../Delete";
 import "./style.css";
 
 export function AllBooks({ children }) {
@@ -22,14 +21,6 @@ export function BooksItem(props) {
         })
     };
 
-    const handleDeleteBtn = event => {
-        API.deleteBook(props.id)
-            .then(
-                res => {
-                    props.loadBooks()
-                })   
-    };
-
     return (
         <li key={props.id}>
             <Container>
@@ -40,10 +31,8 @@ export function BooksItem(props) {
                         <p>{props.description}</p>
                         <a rel="noreferrer noopener" className="btn btn-md btn-primary input-md" target="_blank" href={props.link}>View</a>
                         
-                        {!props.id ?
-                            <Save type="warning" className="btn btn-md btn-primary input-md input-md" onClick={handleSaveBtn}>Save</Save>
-                            :
-                            <Delete type="info" className="btn btn-md btn-primary input-md input-md" onClick={handleDeleteBtn}>Delete</Delete>
+                        {<Save type="warning" className="btn btn-md btn-primary input-md input-md" onClick={handleSaveBtn}>Save</Save>
+                            
                         }
                     </Col>
                 </Row>
