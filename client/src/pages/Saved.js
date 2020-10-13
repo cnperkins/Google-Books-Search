@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Container, Row, Col } from "../components/Grid";
-import { BookList, BookListItem } from "../components/List";
+import { AllBooks, BooksItem } from "../components/List";
 
 class Save extends Component {
 
-    // instantiate state for saved books
     state = {
         savedBooks: []
     };
 
-    // loads saved books when Saved page loads
     componentDidMount() {
         this.loadBooks();
     };
 
-    // loads books from database
     loadBooks = event => {
 
         API.getBooks()
@@ -33,10 +30,10 @@ class Save extends Component {
                 <Container>
                     <Row>
                         <Col size="xs-12">
-                            <BookList>
+                            <AllBooks>
                                 {this.state.savedBooks.map(book => {
                                     return (
-                                        <BookListItem
+                                        <BooksItem
                                             key={book._id}
                                             title={book.title}
                                             authors={book.authors}
@@ -48,7 +45,7 @@ class Save extends Component {
                                         />
                                     );
                                 })}
-                            </BookList>
+                            </AllBooks>
                         </Col>
                     </Row>
                 </Container>
